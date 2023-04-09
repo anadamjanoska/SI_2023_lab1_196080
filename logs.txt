@@ -1,0 +1,36 @@
+commit 0e4452003d953090168e8d677f3dda16cb7ba03f
+Author: Ana Damjanoska <ana.damjanoska@yahoo.com>
+Date:   Sun Apr 9 14:50:51 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit d09988fb9acc53da5492e3ff6e14d723b382cc74
+Merge: 1d45239 1de899f
+Author: Ana Damjanoska <ana.damjanoska@yahoo.com>
+Date:   Sun Apr 9 14:59:34 2023 +0200
+
+    Merge branch 'bug2'
+
+commit 1de899f833069dd2b0e057904d6b8249c80e25a0
+Author: Ana Damjanoska <ana.damjanoska@yahoo.com>
+Date:   Sun Apr 9 14:45:50 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit 1d45239f63aa427006c46d5d387d51903349ed1e
+Author: Ana Damjanoska <ana.damjanoska@yahoo.com>
+Date:   Sun Apr 9 14:35:04 2023 +0200
+
+    Fix wrong loop for reading
+
+commit 064153fb5859be69a0638fbcdf8ee9563f7d9374
+Author: Ana Damjanoska <ana.damjanoska@yahoo.com>
+Date:   Sun Apr 9 02:57:28 2023 +0200
+
+    Add java class
+
+commit 50c89eb1501864e9fc6b9e64168e183c8d0f18c0
+Author: Ana Damjanoska <ana.damjanoska@yahoo.com>
+Date:   Sun Apr 9 02:36:18 2023 +0200
+
+    Initial commit

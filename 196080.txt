@@ -1,0 +1,194 @@
+$ git config --global user.name "Ana Damjanoska"
+$ git config --global user.email "ana.damjanoska@yahoo.com"
+
+1. anadamjanoska - профил на Github
+
+2. Repository default branch name: master
+
+3. Креиран репозиториум SI_2023_lab1_196080
+
+4. Креиран локален репозиториум:
+cd Documents/SI //пристап до фолдер SI
+mkdir SI_2023_lab1_196080 //креиран нов директориум
+git init //креиран нов Git репозиториум
+
+5. Поврзување локален репо со remote repo:
+git remote add origin https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+Проверка дали се е како што треба: 
+$ git remote -v
+origin  https://github.com/anadamjanoska/SI_2023_lab1_196080.git (fetch)
+origin  https://github.com/anadamjanoska/SI_2023_lab1_196080.git (push)
+
+6. git add README.md //додавање на README.md
+git commit -m "Initial commit" //commit со порака Initial commit
+git push origin master //синхронизирање со remote repo
+
+7. git add SILab1.java 
+git commit -m "Add java class"
+
+8. git push origin master
+
+Прва грешка: 
+for(int i=0; i < n; i++) 
+Втора грешка:
+if(el % 2 != 0)
+Трета грешка:
+sum += el;
+
+
+9. Три гранки кои се разгрануваат од master:
+git branch bug1
+git branch bug2
+git branch bug3
+
+10. git checkout bug1 //префрлање на bug1
+Switched to branch 'bug1'
+
+11. git add SILab1.java //додавање на фајлот со поправена прва грешка
+$ git commit -m "Fix wrong loop for reading" 
+[bug1 1d45239] Fix wrong loop for reading
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+12.git checkout bug2 //префрлање на bug2
+Switched to branch 'bug2'
+
+13. git add SILab1.java //додавање на фајлот со поправена втора грешка
+$ git commit -m "Fix wrong condition in filterOddNumbers"
+[bug2 1de899f] Fix wrong condition in filterOddNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+14. git checkout bug3 //префрлање на bug3
+Switched to branch 'bug3'
+
+15. git add SILab1.java //додавање на фајлот со поправена трета грешка
+$ git commit -m "Fix method sumEvenNumbers"
+[bug3 af10f36] Fix method sumEvenNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+16. $ git push --all origin //синхронизирање на сите гранки со remote repo
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 816 bytes | 816.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+ * [new branch]      bug1 -> bug1
+ * [new branch]      bug2 -> bug2
+ * [new branch]      bug3 -> bug3
+
+17. git checkout master //префрлање на гранка master
+Switched to branch 'master'
+
+18. $ git merge bug1 //спојување на bug1 кон гранка master
+Updating 064153f..1d45239
+Fast-forward
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Не се случи конфликт при извршување на наредбата.
+
+19. $ git push --all origin //синхронизирање
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+   064153f..1d45239  master -> master
+
+20.$ git merge bug2 //спојување на bug2 кон гранка master
+Auto-merging SILab1.java
+Merge made by the 'ort' strategy.
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Не се случи конфликт при извршување на наредбата.
+
+21. Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git push --all origin //синхронизирање
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 356 bytes | 356.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+   1d45239..d09988f  master -> master
+
+22. git checkout bug3 //префрлање на bug3
+Switched to branch 'bug3'
+
+23. 
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (bug3)
+$ git rebase master 
+Successfully rebased and updated refs/heads/bug3.
+
+24.  git checkout master //префрлање на master
+Switched to branch 'master'
+
+25. git merge bug3 //спојување на bug3 кон гранка master
+Updating d09988f..0e44520
+Fast-forward
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Не се случи конфликт при извршување на наредбата.
+
+26.
+$ git push --all origin //синхронизирање
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+   d09988f..0e44520  master -> master
+ ! [rejected]        bug3 -> bug3 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/anadamjanoska/SI_2023_lab1_196080.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ git checkout bug3
+Switched to branch 'bug3'
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (bug3)
+$ git push --force origin bug3
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+ + af10f36...0e44520 bug3 -> bug3 (forced update)
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (bug3)
+$ git checkout master
+Switched to branch 'master'
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git push --all origin
+Everything up-to-date
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git merge bug3
+Already up to date.
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git push --all origin
+Everything up-to-date
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git push origin bug3
+Everything up-to-date
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git push origin --delete bug3
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+ - [deleted]         bug3
+
+Ana@DESKTOP-E0995CD MINGW64 ~/Documents/SI (master)
+$ git push origin bug3
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'bug3' on GitHub by visiting:
+remote:      https://github.com/anadamjanoska/SI_2023_lab1_196080/pull/new/bug3
+remote:
+To https://github.com/anadamjanoska/SI_2023_lab1_196080.git
+ * [new branch]      bug3 -> bug3
+
